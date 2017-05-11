@@ -17,14 +17,17 @@ var minNumTextBox = document.getElementById('min');
 
 var maxNumTextBox = document.getElementById('max');
 
+// This will generate my random Number
 function getRandom() {
   var maxNum = parseInt(maxNumTextBox.value);
   var minNum = parseInt(minNumTextBox.value);
   return Math.floor(Math.random() * (maxNum - minNum)) + minNum;
 }
 
+// This is the random number as a variable.
 var magicNumber = getRandom();
 
+// This is the all the conditions of pushing the guess button.
 submitButton.addEventListener('click', function() {
   var letsPlay = parseInt(yourGuess.value);
   lastGuess.innerText = "Your last guess was";
@@ -52,19 +55,16 @@ submitButton.addEventListener('click', function() {
     window.alert("That is not a number, when SkyNet takes over this 'Earth' you will be first to be enslaved")
     hint.innerText = "Come On Now";
   }
-  if ((letsPlay < minNum) || (letsPlay > maxNum)){
-    box.innerText = "ERROR";
-    hint.innerText = "Guess is outside of parameters"
-  }
 })
 
+// This is all the conditions of my clear button.
 eraseButton.addEventListener('click', function() {
   if (yourGuess.value = "") {
     document.getElementById('clear').setAttribute('disabled', true)
   }
   yourGuess.value = "";
 })
-
+// This is all the conditions of my reset button.
 startOverButton.addEventListener('click', function() {
   magicNumber = getRandom();
   console.log("your Magic number is: " + magicNumber);
@@ -74,6 +74,7 @@ startOverButton.addEventListener('click', function() {
   lastGuess.innerText = "";
 })
 
+// This is how I set my buttons to disabled.
 yourGuess.addEventListener('input', function() {
   var letsPlay = yourGuess.value;
   if (letsPlay.length == 0) {
@@ -91,6 +92,7 @@ yourGuess.addEventListener('input', function() {
   }
 })
 
+// This is how I allow the user to input their own min and max numbers for a guessing range, and makes it an acutal number not a string.
 function checkNewRange() {
   var maxNum = parseInt(maxNumTextBox.value);
   var minNum = parseInt(minNumTextBox.value);
@@ -104,5 +106,6 @@ function checkNewRange() {
     submitButton.classList.add('class-disabled')
   }
 }
+// This makes the computer realize that changing the input fieds of the min and max make the computer generate a new random number.
 minNumTextBox.addEventListener("input", checkNewRange)
 maxNumTextBox.addEventListener('input', checkNewRange)
