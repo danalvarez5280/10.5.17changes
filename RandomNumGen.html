@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
   <title>Random Number Guessing Game!</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="RandomNumGen.css" type="text/css" >
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
 </head>
 <header>
@@ -10,18 +10,20 @@
   <h1 id="guesser">Guesser</h1>
 </header>
 <body>
-  <section>
-    <input id="entry" type="text" name="text" placeholder="Enter your guess" maxlength="9"><br />
+  <section id="game">
+    <input id="entry" type="text" name="text" placeholder="Enter your guess" maxlength="7"><br />
+    <input id="min" class="values" type="text" name="text" value="1" maxlength="3">
+    <input id="max" class="values" type="text" name="text" value="100" may length="7"><br />
     <button id="guess" class="clickme" name="Guess">Guess</button>
-    <button id="clear" class="clickme" type="cancel" name="Clear" value="Clear">Clear</button><br />
+    <button id="clear" disabled class="clickme class-disabled" type="cancel" name="Clear" value="Clear">Clear</button><br />
   </section>
   <section id="your-guess">
     <div id="your-number" class="answers"></div>
     <div id="number"></div>
     <div id="clue" class="answers"></div>
   </section>
-
-
-  <button id="reset" class="clickme" type="reset" onclick="file:///Users/BendersShadow/Turing/code/week-2-exercises/RandomNumGen.html" name="Reset">Reset</button>
+  <section id="redo">
+    <button id="reset" disabled class="clickme class-disabled" type="reset" name="Reset">Reset</button>
+  </section>
 </body>
   <script type="text/javascript" src="RandomNumGen.js" ></script>
