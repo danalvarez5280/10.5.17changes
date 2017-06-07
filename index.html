@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Guessing Game!</title>
+  <link rel="stylesheet" href="RandomNumGen.css" type="text/css" >
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<body>
+</head>
+<header>
+  <h1>Number<span id="guesser">Guesser</span></h1>
+</header>
+  <section id="game">
+    <input id="entry" type="text" class="values" name="text" placeholder="Enter your guess" maxlength="7">
+    <label for="min">From</label></la><input id="min" class="values range" type="text" name="text" value="1" maxlength="3">
+    <label for="max"></label><input id="max" class="values range" type="text" name="text" value="100" may length="7">
+    <button id="guess" class="clickme" name="Guess">Guess</button>
+    <button id="clear" disabled class="clickme class-disabled" type="cancel" name="Clear" value="Clear">Clear</button>
+  </section>
+  <section id="your-guess">
+    <div id="your-number" class="answers"></div>
+    <div id="number"></div>
+    <div id="clue" class="answers"></div>
+  </section>
+  <section id="redo">
+    <button id="reset" disabled class="clickme class-disabled" type="reset" name="Reset">Reset</button>
+  </section>
+</body>
+  <script type="text/javascript" src="RandomNumGen.js" ></script>
+</html>
